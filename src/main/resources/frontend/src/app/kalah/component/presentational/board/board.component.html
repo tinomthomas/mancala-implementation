@@ -1,0 +1,37 @@
+<div class="container">
+    <header>
+        <h1>Kalah Game</h1>
+    </header>
+    <player-details [playerContext]="topPlayerContext"></player-details>
+    <mat-grid-list cols="8" gutterSize="0" class="board" rowHeight="120px">
+        <mat-grid-tile rowspan="2">
+            <div [matTooltip]="topPlayerContext?.store.seeds.length + ''" matTooltipClass="tooltip" matTooltipPosition="below" class="pit store">
+                <div *ngFor="let seedWrapper of topPlayerContext?.store.seedWrappers" class="seed-wrapper" [style]="{'transform': seedWrapper.degree}">
+                    <div *ngFor="let seed of seedWrapper.seeds" [ngClass]="['seed', seed.type]"></div>
+                </div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile *ngFor="let house of topPlayerContext?.houses.slice().reverse(); let last = last" [ngClass]="{'last-child': last, 'border-bottom': true}">
+            <div [matTooltip]="house.seeds.length + ''" matTooltipClass="tooltip" matTooltipPosition="below" (click)="selectHouse(house)" class="pit house" [class.enabled]="topPlayerContext.current" matRipple [matRippleDisabled]="!topPlayerContext.current">
+                <div *ngFor="let seedWrapper of house.seedWrappers" class="seed-wrapper" [style]="{'transform': seedWrapper.degree}">
+                    <div *ngFor="let seed of seedWrapper.seeds" [ngClass]="['seed', seed.type]"></div>
+                </div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile rowspan="2">
+            <div [matTooltip]="bottomPlayerContext?.store.seeds.length + ''" matTooltipClass="tooltip" matTooltipPosition="below" class="pit store">
+                <div *ngFor="let seedWrapper of bottomPlayerContext?.store.seedWrappers" class="seed-wrapper" [style]="{'transform': seedWrapper.degree}">
+                    <div *ngFor="let seed of seedWrapper.seeds" [ngClass]="['seed', seed.type]"></div>
+                </div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile *ngFor="let house of bottomPlayerContext?.houses; let first = first" [ngClass]="{'first-child': first,'border-top': true}">
+            <div [matTooltip]="house.seeds.length + ''" matTooltipClass="tooltip" matTooltipPosition="above" (click)="selectHouse(house)" class="pit house" [class.enabled]="bottomPlayerContext.current" matRipple [matRippleDisabled]="!bottomPlayerContext.current">
+                <div *ngFor="let seedWrapper of house.seedWrappers" class="seed-wrapper" [style]="{'transform': seedWrapper.degree}">
+                    <div *ngFor="let seed of seedWrapper.seeds" [ngClass]="['seed', seed.type]"></div>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <player-details [playerContext]="bottomPlayerContext"></player-details>
+</div>

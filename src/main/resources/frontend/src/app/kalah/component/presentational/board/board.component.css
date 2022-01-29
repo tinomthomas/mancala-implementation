@@ -1,0 +1,113 @@
+.container {
+    margin: 20px auto;
+    border: 1px solid #323232;
+    font-family: sans-serif;
+    padding-bottom: 40px;
+    width: 1050px;
+}
+header {
+    background-color: #323232;
+    color: white;
+    padding: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+h1 {
+    margin: 0 0 0px;
+}
+
+.board {
+    background-image: url('../../../../../assets/images/board.png');
+    border-radius: 10px;
+    background-size: contain;
+    margin: 0 20px;
+    box-shadow: 5px 5px 10px #565454;
+}
+.pit {
+    height: 70%;
+    width: 85%;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    box-shadow: 4px 4px 20px #565454 inset;
+}
+.store {
+    padding: 15px;
+    border-radius: 50px;
+    justify-content: center;
+}
+.house {
+    border-radius: 50%;
+    justify-content: space-around;
+    width: 120px;
+    height: 95px;
+}
+.house.enabled {
+    cursor: pointer;
+}
+
+.seed-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+}
+.store>.seed-wrapper {
+    padding: 50px 20px;
+}
+.seed {
+    display: block;
+    background: black;
+    border-radius: 100%;
+    height: 22px;
+    width: 30px;
+    margin: 0;
+    
+    box-shadow: 3px 3px 5px rgb(46 44 44 / 40%)
+}
+.seed.type1 {
+    background: radial-gradient(circle at 10px 10px, #5cabff, #000);
+}
+.seed.type2 {
+    background: radial-gradient(circle at 10px 10px, #f44336, #000);
+}
+.seed.type3 {
+    background: radial-gradient(circle at 10px 10px, #7b1fa2, #000);
+}
+.seed.type4 {
+    background: radial-gradient(circle at 10px 10px, #ffffff, #000);
+}
+.seed.type5 {
+    background: radial-gradient(circle at 10px 10px, #46A35D, #000);
+}
+.seed.type6 {
+    background: radial-gradient(circle at 10px 10px, #686868, #000);
+}
+
+.last-child{
+    border-right: 5px solid #c6ab82;
+}
+.first-child {
+    border-left: 5px solid #c6ab82;
+}
+.border-bottom {
+    border-bottom: 5px solid #c6ab82;
+}
+.border-top {
+    border-top: 5px solid #c6ab82;
+}

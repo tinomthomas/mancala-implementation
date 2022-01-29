@@ -1,0 +1,13 @@
+<div class="player">
+    <div *ngIf="playerContext?.current; else notActive" class="b-circle">
+        <div class="animate-zooming" style="animation: animate-zooming 2s ease-in infinite;"></div>
+        <div class="animate-zooming" style="animation: animate-zooming 2s ease-in 1s infinite;"></div>
+        <div class="circle"></div>
+    </div>
+    <ng-template #notActive>
+        <div class="b-circle" #notActive>
+            <div class="circle red"></div>
+        </div>
+    </ng-template>
+    <div>{{playerContext?.player.firstName}} {{playerContext?.player.lastName}}</div>
+</div>

@@ -1,0 +1,8 @@
+springdoc:
+  swagger-ui:
+    path: /api
+board:
+  configuration:
+    house:
+      initial-seeds: 4
+      count: 6

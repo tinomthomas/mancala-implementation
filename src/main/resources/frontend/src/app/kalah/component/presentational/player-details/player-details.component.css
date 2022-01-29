@@ -1,0 +1,45 @@
+.player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    height: 50px;
+}
+.b-circle {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background-color: #46A35D;
+    border-radius: 50%;
+}
+.circle.red {
+    background-color: #f44336;
+}
+
+@keyframes animate-zooming {
+    from {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        border-radius: 50%;
+        background-color: #000000;
+        opacity: 1;
+    }
+    to {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        border-radius: 50%;
+        background-color: #000000;
+        opacity: 0;
+    }
+}
