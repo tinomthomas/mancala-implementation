@@ -8,7 +8,7 @@ This is an implementation of the game Kalah aka Mancala, written using Java and 
 | **Build Tool** | Maven | Npm |
 # Build
 - Run `mvn clean build` in the root folder
-- The front end code will allso be built as part of the maven build. And the produced artifacts will be copied to `/static` folder of the final fat Jar.
+- The front end code will also be built as part of the maven build. And the produced artifacts will be copied to `/static` folder of the final fat Jar.
 # Test
 Run `mvn verify` in the root folder
 # Run
