@@ -6,7 +6,6 @@ import lombok.Value;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -47,14 +46,6 @@ public class Board {
             .findFirst().orElseThrow(IllegalArgumentException::new);
     }
 
-    public int findFirstPlayerTotalNoOfSeedsInHouses() {
-        return findTotalNoOfSeedsIn(this::firstPlayerHouses);
-    }
-
-    public int findSecondPlayerTotalNoOfSeedsInHouses() {
-        return findTotalNoOfSeedsIn(this::secondPlayerHouses);
-    }
-
     public Pit findFirstPlayerStore() {
         return findStoreWith(settings.getFirstPlayerStoreIndex());
     }
@@ -70,18 +61,6 @@ public class Board {
     public List<Seed> findTotalSeedsInHousesOf(Player player) {
         return pits.stream().filter(Pit::isNotStore).filter(pit -> pit.belongsTo(player))
             .map(Pit::getSeeds).flatMap(List::stream).collect(Collectors.toList());
-    }
-
-    private int findTotalNoOfSeedsIn(Predicate<Pit> predicate) {
-        return pits.stream().filter(predicate).map(Pit::getSeeds).map(List::size).reduce(0, Integer::sum);
-    }
-
-    private boolean firstPlayerHouses(Pit pit) {
-        return pit.getIndex() < settings.getFirstPlayerStoreIndex();
-    }
-
-    private boolean secondPlayerHouses(Pit pit) {
-        return pit.getIndex() > settings.getFirstPlayerStoreIndex() && pit.getIndex() < settings.getSecondPlayerStoreIndex();
     }
 
     private Player withPlayer(int index, Player firstPlayer, Player secondPlayer) {

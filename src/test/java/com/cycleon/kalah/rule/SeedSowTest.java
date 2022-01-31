@@ -2,6 +2,7 @@ package com.cycleon.kalah.rule;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.cycleon.kalah.TestBase;
 import com.cycleon.kalah.domain.model.Seed;
 import com.cycleon.kalah.service.KalahContext;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-class SeedSowRuleTest extends RuleTestBase {
+class SeedSowTest extends TestBase {
 
     @BeforeEach
     void init() {

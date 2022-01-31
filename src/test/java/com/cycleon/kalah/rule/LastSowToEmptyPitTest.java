@@ -1,5 +1,6 @@
 package com.cycleon.kalah.rule;
 
+import com.cycleon.kalah.TestBase;
 import com.cycleon.kalah.domain.model.Seed;
 import com.cycleon.kalah.service.KalahContext;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,7 +10,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class LastSowToEmptyPitRuleTest extends RuleTestBase {
+class LastSowToEmptyPitTest extends TestBase {
 
     @BeforeEach
     void init() {
