@@ -1,12 +1,13 @@
 package com.cycleon.kalah.rule;
 
+import com.cycleon.kalah.TestBase;
 import com.cycleon.kalah.service.KalahContext;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class SetNextPlayerRuleTest extends RuleTestBase {
+class SetNextPlayerTest extends TestBase {
 
     @BeforeEach
     void init() {

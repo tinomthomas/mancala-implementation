@@ -17,7 +17,7 @@ public class OpenApiConfiguration {
 
     @Bean
     public RouterFunction<ServerResponse> indexRouterFunction() {
-        return RouterFunctions.route(RequestPredicates.GET("/api"),
+        return RouterFunctions.route(RequestPredicates.GET("/api/"),
             req -> ServerResponse.temporaryRedirect(URI.create("/api")).build());
     }
 
