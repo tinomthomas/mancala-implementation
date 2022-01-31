@@ -1,6 +1,6 @@
 # Mancala Implementation
 This is an implementation of the game Kalah aka Mancala, written using Java and Angular.
-
+![img.png](img.png)
 # Tech Stack
 |  | Backend | Frontend |
 |---|---|---|
